@@ -1749,5 +1749,185 @@ textarea {
 
     text-align: center;
   }
+/* =========================================================
+   MOBILE RESPONSIVE FIXES
+   These styles apply ONLY to screens 600px and below.
+========================================================= */
 
+@media (max-width: 600px) {
+
+  /* =======================================================
+     HERO SECTION
+  ======================================================= */
+
+  .hero {
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-position: center !important;
+    background-size: auto !important;
+  }
+
+  /* =======================================================
+     ABOUT SECTION
+  ======================================================= */
+
+  .about-image {
+    display: none !important;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* =========================================================
+     MOBILE EXPERTISE TIMELINE
+  ========================================================= */
+
+  .expertise-top-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Moves Card 01 down by 40px on mobile */
+  .card-1-wrapper {
+    width: 100% !important;
+    padding-top: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .expertise-path-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    /* Equalized gaps across Cards 02, 03, 04 */
+    gap: 40px !important;
+
+    /* Matches gap between Card 01 and Card 02 */
+    padding: 40px 0 10px 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Remove default pseudo-elements */
+  .expertise-path-wrapper::before,
+  .expertise-path-wrapper::after {
+    content: none !important;
+  }
+
+  /* Hide desktop SVG curved path on mobile */
+  .curved-path-svg {
+    display: none !important;
+  }
+
+  /* =======================================================
+     CARDS LAYOUT
+  ======================================================= */
+
+  .flashcard,
+  .card-1-top,
+  .card-2,
+  .card-3,
+  .card-4 {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: calc(100% - 20px) !important;
+    max-width: calc(100% - 20px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 10px !important;
+    padding: 24px !important;
+
+    box-sizing: border-box;
+    transform: none !important;
+    z-index: 2;
+  }
+
+  /* =======================================================
+     UNIFORM CENTER DASHED CONNECTORS (01->02, 02->03, 03->04)
+  ======================================================= */
+
+  .card-2::before,
+  .card-3::before,
+  .card-4::before {
+    content: "" !important;
+    position: absolute !important;
+
+    left: 50% !important;
+    top: -40px !important;
+
+    width: 2px !important;
+    height: 40px !important;
+
+    transform: translateX(-50%) !important;
+    border-left: 2px dashed rgba(79, 220, 255, 0.45) !important;
+    z-index: 1 !important;
+  }
+
+  .card-1-top::after {
+    content: none !important;
+  }
+
+  /* =======================================================
+     CARD CONTENT
+  ======================================================= */
+
+  .flashcard h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+
+    margin-top: 10px;
+    margin-bottom: 12px;
+
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .flashcard p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin-bottom: 0;
+
+    overflow: visible !important;
+    white-space: normal !important;
+
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* =======================================================
+     SLOGAN
+  ======================================================= */
+
+  .path-slogan {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    text-align: center;
+
+    box-sizing: border-box;
+  }
+}
 }

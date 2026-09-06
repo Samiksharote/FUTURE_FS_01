@@ -1749,6 +1749,112 @@ textarea {
 
     text-align: center;
   }
+ /* --------------------------------------------------
+   2. GLOBAL SOCIAL LINKS & FOOTER (NEW CODE HERE)
+-------------------------------------------------- */
+.hero-socials,
+.contact-socials {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 20px !important;
+  margin-top: 25px !important;
+}
+
+.social-box-link {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  color: var(--muted, #aebbd4) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+
+.icon-box {
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  
+  border-radius: 6px !important;
+  border: 1px solid rgba(79, 220, 255, 0.3) !important;
+  background: rgba(11, 25, 53, 0.7) !important;
+  color: var(--accent, #4FDcff) !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-box-link:hover .icon-box {
+  border-color: var(--accent, #4FDcff) !important;
+  background: rgba(79, 220, 255, 0.2) !important;
+  box-shadow: 0 0 12px rgba(79, 220, 255, 0.35) !important;
+  transform: translateY(-2px) !important;
+}
+
+.footer {
+  width: 100% !important;
+  background: #040914 !important;
+  padding: 35px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.footer-container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+.footer-logo {
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 4px 0 !important;
+}
+
+.footer-logo span {
+  color: var(--accent, #4FDcff) !important;
+}
+
+.footer-subtext {
+  color: var(--muted, #7e8c9f) !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+}
+
+.footer-copyright p {
+  color: var(--muted, #7e8c9f) !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+  text-align: right !important;
+}
+
+
+/* --------------------------------------------------
+   3. MOBILE RESPONSIVE FIXES (ALWAYS AT THE VERY BOTTOM)
+-------------------------------------------------- */
+@media (max-width: 600px) {
+
+  .footer-container {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+
+  .footer-copyright p {
+    text-align: center !important;
+  }
+
+  /* (All your mobile timeline & section overrides) */
+}
 /* =========================================================
    MOBILE RESPONSIVE FIXES
    These styles apply ONLY to screens 600px and below.
@@ -1928,6 +2034,50 @@ textarea {
     text-align: center;
 
     box-sizing: border-box;
+  }
+}
+/* =========================================================
+   FORCE SINGLE LINE & FOOTER ALIGNMENT FOR ALL DESKTOP SCREENS
+   Place at the VERY BOTTOM of App.css
+========================================================= */
+
+@media (min-width: 601px) {
+  /* Forces LinkedIn & GitHub icons + text onto a single horizontal line */
+  .hero-socials,
+  .contact-socials {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .social-box-link {
+    display: inline-flex !important;
+    flex-direction: row !important; /* Prevents text from dropping below icon box */
+    align-items: center !important;
+    gap: 10px !important;
+    white-space: nowrap !important; /* Prevents text wrap */
+  }
+
+  .icon-box {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Forces Brand to left edge and Copyright to far right edge */
+  .footer-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+  }
+
+  .footer-copyright p {
+    text-align: right !important;
   }
 }
 }

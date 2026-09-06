@@ -34,7 +34,7 @@ The website was built using **React.js with Vite** and designed with responsive 
 
 ## 🌍 Deployment
 
-**Live Website:** Add your Vercel link here
+**Live Website:** https://future-fs-01-seven-roan.vercel.app/
 
 ## 👩‍💻 Developer
 
